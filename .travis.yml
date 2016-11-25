@@ -19,16 +19,13 @@ env:
     run_opts: ""
     playbook: test.yml
   - distro: debian8
-    init: /sbin/init
-    run_opts: ""
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
     playbook: test.yml
   - distro: debian8
-    init: /sbin/init
-    run_opts: ""
+    init: /lib/systemd/systemd
+    run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
     playbook: debian-mysql5.6-test.yml
-
-services:
-  - docker
 
 before_install:
   # Pull container
