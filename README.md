@@ -103,6 +103,12 @@ The rest of the settings in `defaults/main.yml` control MySQL's memory usage and
 
 Replication settings. Set `mysql_server_id` and `mysql_replication_role` by server (e.g. the master would be ID `1`, with the `mysql_replication_role` of `master`, and the slave would be ID `2`, with the `mysql_replication_role` of `slave`). The `mysql_replication_user` uses the same keys as `mysql_users`, and is created on master servers, and used to replicate on all the slaves.
 
+### Mysql 5.6 or 5.7 on Debian
+
+On Debian, the MySQL default version is 5.5. You can specify another version by setting the following variable (for example):
+
+      mysql_version: '5.6'
+
 ### MariaDB usage
 
 This role works with either MySQL or a compatible version of MariaDB. On RHEL/CentOS 7+, the mariadb database engine was substituted as the default MySQL replacement package. No modifications are necessary though all of the variables still reference 'mysql' instead of mariadb.
